@@ -1,0 +1,300 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  padding: 10px;
+  margin: 0;
+  background: #f9f9f9;
+}
+
+h1, h2, h4, h5 {
+  margin-bottom: 15px;
+}
+.legend-item {
+            padding: 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+        .legend-item:hover {
+            background-color: #f8f9fa;
+        }
+        .legend-label {
+            border: none;
+            background: transparent;
+            font-weight: bold;
+            padding: 2px 4px;
+            border-radius: 3px;
+            transition: all 0.2s;
+        }
+        .legend-label:focus {
+            outline: none;
+            background-color: #fff;
+            box-shadow: 0 0 0 2px #007bff;
+        }
+        .edit-buttons {
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        .legend-item:hover .edit-buttons {
+            opacity: 1;
+        }
+        .color-dot {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 10px;
+            flex-shrink: 0;
+        }
+        .saving-indicator {
+            color: #28a745;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+        .error-indicator {
+            color: #dc3545;
+            font-size: 12px;
+            margin-left: 5px;
+        }
+.calendar .days {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 168px; 
+  align-content: flex-start;
+}
+
+.calendar .day {
+  width: 14.28%;
+  height: 28px;
+  line-height: 28px;  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 3px; 
+}
+
+.calendar .day a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: black;
+  text-decoration: none;
+}
+
+.calendar .day a:hover {
+  text-decoration: underline;
+}
+
+.event-day {
+  border-radius: 50%;
+  padding: 4px;
+  color: white;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+}
+
+.calendar .weekdays {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.calendar .weekdays div {
+  width: 14.28%;
+  font-weight: bold;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+.month {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  /* Fix height so all months have the same height */
+  height: 250px;
+}
+
+.day.selected {
+  outline: 1px solid #007bff;
+  background: azure;
+}
+
+/* Scroll event list if long */
+.event-list-container {
+  max-height: 80vh;
+  overflow-y: auto;
+  padding-right: 15px;
+}
+
+/* Responsive Adjustments */
+
+@media (max-width: 992px) {
+  .month {
+    height: auto; /* Let height auto on smaller screens to avoid overflow */
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .calendar .day, .event-day {
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+  }
+
+  .calendar .weekdays div {
+    width: 14.28%;
+    font-weight: 600;
+    text-align: center;
+    font-size: 0.7em;
+    padding: 2px 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 576px) {
+    .calendar .weekdays div {
+        font-size: 0.75em;
+        padding: 1px 0;
+    }
+}
+}
+
+.calendar .days {
+            display: flex;
+            flex-wrap: wrap;
+            min-height: 168px;
+            align-content: flex-start;
+        }
+        .calendar .day {
+            width: 14.28%;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            font-size: 14px;
+            cursor: pointer;
+            margin-bottom: 3px;
+        }
+        .calendar .day a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            color: black;
+            text-decoration: none;
+        }
+        .calendar .day a:hover {
+            text-decoration: underline;
+        }
+        .event-day {
+            border-radius: 50%;
+            padding: 4px;
+            color: white !important;
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            font-weight: bold;
+        }
+        .calendar .weekdays {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 8px;
+        }
+        .calendar .weekdays div {
+            width: 14.28%;
+            font-weight: 600;
+            text-align: center;
+            font-size: 0.7em;
+        }
+        .month {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            height: 250px;
+        }
+        .day.selected {
+            outline: 1px solid #007bff;
+            background: azure;
+        }
+        .event-list-container {
+            max-height: 80vh;
+            overflow-y: auto;
+            padding-right: 15px;
+        }
+        .add-event-btn {
+            position: fixed;
+            top: 50px;
+            right: 50px;
+            z-index: 999;
+        }
+        @media (max-width: 576px) {
+            .add-event-btn {
+                right: 10px;
+                top: 10px;
+                transform: scale(0.9);
+            }
+        }
+        .add-event-btn button {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: box-shadow 0.3s ease;
+        }
+
+        .add-event-btn button:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+        .calendar-container {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .event-list-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .badge-category {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        .date-chip {
+            display: inline-block;
+            background-color: #e9ecef;
+            padding: 4px 10px;
+            border-radius: 16px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+        }
+        .color-preset {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            margin: 5px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .color-preset:hover {
+            transform: scale(1.1);
+        }
+        .color-preset.selected {
+            border: 2px solid #007bff;
+            transform: scale(1.1);
+        }
+        .custom-color-row {
+            margin-top: 10px;
+        }
